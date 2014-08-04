@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="/css/snake.css" type="text/css" />
+    <link rel="stylesheet" href="/css/global.css" type="text/css" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>browser snake</h1>
+        </header>
+        <div class="registration">
+            <form id="register" onsubmit="return false;">
+                <label for="user-name">User name: </label>
+                <input id="user-name" class="inline-block" name="user-name" type="text" required pattern="[a-zA-Z0-9]*" />
+                <input type="submit" class="inline-block " id="join_button" value='Play' disabled='disabled' />
+                <div id="info_text" class="inline-block">Connecting to game server...</div>
+                <div class="error-message inline-block"></div>
+            </form>
+
+        </div>
+
+
+        <canvas id="gameboard" class="game-board" >Your browser doesn't support canvas.</canvas>
+        <div id="footer" class="clearfix footer">
+            <div id="player_score_text">Your score:
+                <span id="player_score">0</span>
+            </div>
+            <div id="opponent_score" class="opponent_score"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="high-score-block">
+            <div>Highscore</div>
+            <div class="high-score-container">
+
+            </div>
+        </div>
+
+
+        <div id="latency_text">Latency:
+            <span id="latency">0</span>
+        </div>
+    </div>
+    <script src="/js/lib/jquery.js"></script>
+    <script src="/js/lib/lodash.js"></script>
+    <script src="/js/lib/socket.io.min.js"></script>
+    <script src="/cs_module.js" type="text/javascript"></script>
+    <script src="/utils.js" type="text/javascript"></script>
+    <script src="/config.js" type="text/javascript"></script>
+    <script src="/comm_names.js" type="text/javascript"></script>
+    <script src="/js/gridbox.js" type="text/javascript"></script>
+    <script src="/js/snake.js" type="text/javascript"></script>
+    <script src="/js/events.js" type="text/javascript"></script>
+    <script src="/js/highscore.js" type="text/javascript"></script>
+    <script src="/js/snakegame.js" type="text/javascript"></script>
+</body>
+
+</html>

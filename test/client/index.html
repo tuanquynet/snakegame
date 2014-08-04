@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jasmine Spec Runner</title>
+
+
+	<link rel="stylesheet" type="text/css" href="../.grunt/grunt-contrib-jasmine/jasmine.css">
+
+	<script src="../.grunt/grunt-contrib-jasmine/jasmine.js"></script>
+
+	<script src="../.grunt/grunt-contrib-jasmine/jasmine-html.js"></script>
+
+	<script src="../src/js/lib/require.js"></script>
+
+
+
+	<script>
+		'use strict';
+		require.onError = function(error) {
+			var message = error.requireType + ': ';
+			if (error.requireType === 'scripterror' || error.requireType === 'notloaded' && error.requireModules) {
+				message += 'Illegal path or script error: ' + '[\'' + error.requireModules.join("', '") + '\']';
+			} else {
+				message += error.message;
+			}
+
+			throw Error(message);
+		};
+	</script>
+
+	<script>
+
+
+
+	</script>
+
+
+	<script src="src/setupGrunt.js" type="text/javascript"></script>
+
+
+	<script>
+		/*global require*/
+
+		function launchTest() {
+			require([], function(){
+					require(['spec/TestFilterMenuModel.js','spec/TestSample.js','../.grunt/grunt-contrib-jasmine/reporter.js'], function(){
+						require(['../.grunt/grunt-contrib-jasmine/jasmine-helper.js'], function(){
+							// good to go! Our tests should already be running.
+						});
+					});
+			}
+		)
+		}
+	</script>
+</head>
+<body>
+
+<script>
+launchTest();
+</script>
+
+</body>
+</html>

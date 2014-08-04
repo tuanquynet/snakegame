@@ -1,0 +1,16 @@
+<table class="high-score">
+	<thead>
+		<tr>
+			<td>Rank</td>
+			<td>Name</td>
+			<td>Score</td>
+		</tr>
+	</thead>
+	<% _.forEach(scores, function(score, index) { %>
+	<tr>
+		<td><%- (index + 1) %></td>
+		<td><%- score.userName %></td>
+		<td><%- score.count %></td>
+	</tr>
+	<% }); %>
+</table>
